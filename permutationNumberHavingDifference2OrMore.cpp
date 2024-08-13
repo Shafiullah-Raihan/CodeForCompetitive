@@ -1,18 +1,26 @@
 ///https://atcoder.jp/contests/abc234/tasks/abc234_b
 
 #include<bits/stdc++.h>
-#define nl "\n";
 using namespace std;
-
+const int mx= 1008;
+int x[mx],y[mx];
 int main()
 {
     int n;
     cin>>n;
-    if(n==1) {cout<< "1"<< nl;}
-    else if(n ==2 || n == 3) {cout<< "No Solution"<< nl;}
-    else{
-        for(int i = 2;i<=n;i+=2) cout<< i<< " ";
-        for(int i=1;i<=n;i+=2) cout<< i << " ";
+
+    for(int i=0;i<n;i++){
+        cin>> x[i] >> y[i];
     }
-    cout<<nl;
+    double len = 0;
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            int x1= x[i],x2 = x[j],y1 = y[i],y2 =y[j];
+            double p = sqrt(((x1-x2)*(x1-x2)) + ((y1-y2)*(y1-y2)));
+            if(p>len) len = p;
+        }
+    }
+    cout<<setprecision(15)<<len<<endl;
 }
+
+
