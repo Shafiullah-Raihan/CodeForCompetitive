@@ -20,7 +20,7 @@ int main()
             if(p>len) len = p;
         }
     }
-    cout<<setprecision(15)<<len<<endl;
+    cout<<fixed<<setprecision(15)<<len<<endl;
 }
 
 
