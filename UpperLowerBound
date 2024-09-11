@@ -1,0 +1,50 @@
+///https://codeforces.com/contest/2000/problem/B
+
+#include<bits/stdc++.h>
+using namespace std;
+#define file() freopen("input.txt","r",stdin);freopen("output.txt","w",stdout);
+#define endl "\n"
+#define ll long long
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+vector<int>v = {1,2,5,8,8,9,11,16,17};
+
+int main()
+
+{
+    optimize();
+    int low = 0;
+    int x = 8,ans = -1;
+
+    int upper = upper_bound(v.begin(),v.end(),x) - v.begin();
+    int lower = lower_bound(v.begin(),v.end(),x) - v.begin();
+    cout<< lower<< " "<< upper<<endl;
+
+
+
+//    upper bound need to plus 1;
+//      while(low<=high){
+//
+//        int mid = (low+high)/2;
+//        if(arr[mid]<=x){
+//
+//                ans = mid;
+//                low = mid+1;
+//        }
+//
+//        else{
+//            high = mid-1;
+//        }
+//
+//    }
+//    cout<<ans+1<<endl;
+
+
+
+
+
+	return 0;
+}
+
+
+
+
