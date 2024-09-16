@@ -1,0 +1,37 @@
+///subsequences Of A String using recursive
+
+#include<bits/stdc++.h>
+using namespace std;
+#define endl "\n"
+#define ll long long
+#define bismillah ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+void subsequences(string s,int idx,string s1)
+{
+    if(idx==s.size()){
+        cout<< s1<< " ";
+        return;
+    }
+    subsequences(s,idx+1,s1+s[idx]);  ///choose
+ll
+    subsequences(s,idx+1,s1);  /// not choose
+}
+
+int main() {
+    bismillah;
+    string s = "rai";
+
+    int len = s.size();
+
+    subsequences(s,0,"");
+
+
+
+
+
+
+
+
+
+    return 0;
+}
