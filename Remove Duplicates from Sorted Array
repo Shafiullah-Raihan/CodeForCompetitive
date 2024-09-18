@@ -1,0 +1,58 @@
+///Remove Duplicates from Sorted Array using two pointer
+
+///Remove duplicate using two pointer
+#include<bits/stdc++.h>
+using namespace std;
+
+typedef vector<int> vi;
+typedef pair<int,int> pi;
+typedef vector<vector<int>> vvi;
+
+#define fore(i,a,b) for(int i=a;i<=b;i++)
+#define forl(i,a,b) for(int i=a;i<b;i++)
+#define nl cout<<endl
+#define F first
+#define S second
+#define pb push_back
+#define mp make_pair
+#define endl "\n"
+#define ll long long
+#define bismillah ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+int  removeDuplicate(vi &v)
+{
+    int left =0, right =1;
+    if(v.size()==0){
+        return 0;
+    }
+    forl(right,1,v.size())
+    {
+        if(v[left]!= v[right])  
+        {
+            left++;
+            v[left] = v[right];  /// Eikhane left e na dile array purno hobe na . Mane index milbe na.Tai dite hobe
+        }
+    }
+    return left+1;
+
+}
+
+int main() {
+    bismillah;
+    vi v = {1,2,3,3,4,4,5};
+    int cnt =  removeDuplicate(v);
+
+    forl(i,0,cnt)
+    {
+        cout<< v[i]<< " ";
+    }
+    nl;
+
+
+
+
+
+    return 0;
+}
+
+
+
