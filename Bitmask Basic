@@ -1,0 +1,36 @@
+///Bitmask niye kichu basic
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+
+int main() {
+
+    int mask =0;    ///jeita niye kaj korbo
+    mask |= (1<<1);    ///shift 1 bits left
+    cout<< mask<<endl;
+
+    mask |= (1<<3);
+    cout<< mask<< endl;  ///eibar 3 ghor left.Eikhane ager shate kono relation nai.Eita just oi place e jai change korbe ager ta dekbei na
+
+    if(mask &= (1<<3)){
+        cout<< "3rd bit set "<<mask<<endl;    /// 3rd bit set kina dekhe koto hoi ta print
+    }
+    cout<< mask<<endl;
+    if(mask &= (1<<1)){
+        cout<< "3rd bit set "<<mask<<endl;    /// 3rd bit set kina dekhe koto hoi ta print
+    }
+    cout<< mask<<endl;
+
+    mask ^= (1<<3);   /// 3rd position e value change .Ja ache ulte jabe
+    cout<< mask<<endl;
+
+    mask &=~ (1<<2);   ///just clearing 2nd bit.Jodi bit na thake taile kichui change hobe na
+
+    cout<< mask<<endl;
+
+
+    return 0;
+}
