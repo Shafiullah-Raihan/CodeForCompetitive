@@ -1,0 +1,51 @@
+///Topological sorting
+#include <bits/stdc++.h>
+using namespace std;
+
+void topologicalSortUtil(int v, vector<vector<int> >& adj,
+    vector<bool>& visited, stack<int>& st) {
+
+    visited[v] = true;
+
+    for (int i : adj[v]) {
+        if (!visited[i])
+            topologicalSortUtil(i, adj, visited, st);
+    }
+
+    st.push(v);  ///2,1,0,3
+}
+
+vector<int> topologicalSort(vector<vector<int>>& adj) {
+    int V = adj.size();
+
+    stack<int> st;
+    vector<bool> visited(V, false);
+
+    for (int i = 0; i < V; i++) {
+        if (!visited[i])
+            topologicalSortUtil(i, adj, visited, st);
+    }
+
+    vector<int> ans;
+
+    while (!st.empty()) {
+        ans.push_back(st.top());
+        st.pop();
+    }
+
+    return ans;
+}
+
+int main() {
+
+    vector<vector<int>> adj = {{1}, {2}, {}, {1, 2}};
+
+    vector<int> ans = topologicalSort(adj);
+
+    for (auto node: ans) {
+        cout << node << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
